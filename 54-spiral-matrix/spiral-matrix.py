@@ -1,15 +1,16 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        m = len(matrix)  # total number of rows
-        n = len(matrix[0]) # total number of columns
+        m = len(matrix)     # total number of rows
+        n = len(matrix[0])  # total number of columns
 
-        total = m * n   # total elements in matrix, e.g. 3 * 3 = 9 elements
+        total = m * n       # total elements in matrix. e.g. 3 * 3 = 9 elements
 
         ans = []
-        c = 0       # counter variable
+        c = 0
 
         col_start = 0
         row_start = 0
+
         col_end = n - 1
         row_end = m - 1
 
@@ -22,7 +23,7 @@ class Solution:
 
             if c == total:
                 break
-            
+
             # colend: rowstart -> rowend
             for i in range(row_start, row_end + 1):
                 ans.append(matrix[i][col_end])
