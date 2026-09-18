@@ -6,7 +6,8 @@ class Solution:
         total = m * n       # total elements in matrix. e.g. 3 * 3 = 9 elements
 
         ans = []
-        c = 0
+
+        c = 0       # counter variable
 
         col_start = 0
         row_start = 0
@@ -15,16 +16,16 @@ class Solution:
         row_end = m - 1
 
         while c < total:
-            # rowstart: colstart -> colend
+            # row_start: col_start -> col_end
             for i in range(col_start, col_end + 1):
                 ans.append(matrix[row_start][i])
                 c += 1
             row_start += 1
-
+            
             if c == total:
                 break
 
-            # colend: rowstart -> rowend
+            # col_end: row_start -> row_end
             for i in range(row_start, row_end + 1):
                 ans.append(matrix[i][col_end])
                 c += 1
@@ -32,8 +33,8 @@ class Solution:
 
             if c == total:
                 break
-
-            # rowend: colend -> colstart
+            
+            # row_end: col_end -> col_start
             for i in range(col_end, col_start - 1, -1):
                 ans.append(matrix[row_end][i])
                 c += 1
@@ -41,11 +42,11 @@ class Solution:
 
             if c == total:
                 break
-
-            # colstart: rowend -> rowstart
+            
+            # col_start: row_end -> row_start
             for i in range(row_end, row_start - 1, -1):
                 ans.append(matrix[i][col_start])
                 c += 1
             col_start += 1
-
+        
         return ans
