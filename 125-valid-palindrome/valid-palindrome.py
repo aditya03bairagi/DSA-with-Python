@@ -1,8 +1,8 @@
 class Solution:
-    def isAlphanumeric(self, s):
-        x = ord(s)
+    def isAlphaNumeric(self, s):
+        x = ord(s)      # ascii value of s
 
-        if 97<=x<=122 or 65<=x<=90 or 48<=x<=57:
+        if 97<=x<=122 or 65<=x<=90 or 48<=x<=57: # ascii from: a-z or A-Z or 0-9
             return True
         else:
             return False
@@ -10,14 +10,13 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
 
-        # using two pointers
         i = 0
         j = len(s) - 1
 
         while i < j:
-            if not self.isAlphanumeric(s[i]):
+            if not self.isAlphaNumeric(s[i]):
                 i += 1
-            elif not self.isAlphanumeric(s[j]):
+            elif not self.isAlphaNumeric(s[j]):
                 j -= 1
             elif s[i] == s[j]:
                 i += 1
