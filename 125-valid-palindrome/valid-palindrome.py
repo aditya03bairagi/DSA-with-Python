@@ -10,6 +10,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         s = s.lower()
 
+        # using two pointers
         i = 0
         j = len(s) - 1
 
